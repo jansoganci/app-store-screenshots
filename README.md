@@ -1,4 +1,4 @@
-# App Store Screenshots — Editor (NutriWeek fork)
+# App Store Screenshots — Enhanced Editor
 
 A Next.js + ShadCN editor for App Store and Google Play marketing screenshots.
 
@@ -8,7 +8,7 @@ This project is based on **[ParthJadhav/app-store-screenshots](https://github.co
 
 **Original work:** Copyright (c) 2026 Parth Jadhav. See [LICENSE](./LICENSE).
 
-**NutriWeek enhancements:** maintained by [@jansoganci](https://github.com/jansoganci). These changes are also released under MIT; the original copyright and license notice above are preserved.
+**Editor enhancements:** maintained by [@jansoganci](https://github.com/jansoganci). These changes are also released under MIT; the original copyright and license notice above are preserved.
 
 If you use this fork, please keep this credits section and the LICENSE file.
 
@@ -23,8 +23,7 @@ Changes on top of the upstream editor template:
 | **Label & headline typography** | Per-slide font size, weight, and color in Screen settings |
 | **Background modes** | Theme default, solid color, or gradient — gradient uses *your* picked color (not the theme accent blue) |
 | **Phone layers (`deviceElements`)** | Add/remove iPhone mockups with **+ Phone** and trash; up to 3 phones per slide |
-| **Schema v3** | `deviceElements[]` in `app-store-screenshots.json`; legacy `two-devices` layouts migrate on load |
-| **NutriWeek sample deck** | Turkish copy, uploaded screenshots, and layout presets in `app-store-screenshots.json` |
+| **Schema v3** | `deviceElements[]` in project JSON; legacy `two-devices` layouts migrate on load |
 
 New / updated modules:
 
@@ -37,9 +36,12 @@ New / updated modules:
 ## Quick start
 
 ```bash
+cp app-store-screenshots.json.example app-store-screenshots.json
 bun install   # or pnpm / yarn / npm
 bun dev       # http://localhost:3000
 ```
+
+`app-store-screenshots.json` is **gitignored** — copy the example (or let the editor create defaults on first run). Put app icons and screenshots under `public/` locally; uploaded files go to `public/screenshots/uploaded/` and stay local too.
 
 ## What's inside
 

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 3,
+  "appName": "My App",
+  "themeId": "clean-light",
+  "connectedCanvas": true,
+  "locales": ["en"],
+  "locale": "en",
+  "device": "iphone",
+  "orientation": "portrait",
+  "appIcon": "",
+  "slidesByDevice": {
+    "iphone": [
+      {
+        "id": "s_example_1",
+        "layout": "hero",
+        "label": { "en": "MEET YOUR APP" },
+        "headline": { "en": "Sell one\nidea per slide." },
+        "screenshot": ""
+      },
+      {
+        "id": "s_example_2",
+        "layout": "device-bottom",
+        "label": { "en": "FEATURE 01" },
+        "headline": { "en": "Your headline\nlives here." },
+        "screenshot": ""
+      }
+    ],
+    "android": [],
+    "ipad": [],
+    "android-7": [],
+    "android-10": [],
+    "feature-graphic": []
+  }
+}

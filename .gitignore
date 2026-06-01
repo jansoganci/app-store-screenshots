@@ -5,3 +5,15 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# --- Local / app-specific (keep on disk, do not publish) ---
+APP_STORE_SCREENSHOTS_GUIDE.md
+app-store-screenshots.json
+
+# App icon & uploaded screenshots (per-project)
+public/app-icon.png
+public/screenshots/uploaded/
+
+# NutriWeek marketing assets (local only)
+public/screenshots/**/nutriweek-*
+public/screenshots/**/Simulator Screenshot*
