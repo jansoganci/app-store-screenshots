@@ -4,6 +4,7 @@ import {
   AlignCenter,
   AlignLeft,
   AlignRight,
+  Bold,
   ArrowDownToLine,
   ArrowUpToLine,
   ChevronDown,
@@ -841,6 +842,8 @@ function TextElementPanel({
   onTextPatch: (patch: Partial<TextElement>) => void;
 }) {
   const text = element.text?.[locale] ?? pickText(element.text, locale);
+  const fontWeight = element.fontWeight ?? 700;
+  const isBold = fontWeight >= 600;
   return (
     <div className="space-y-2 rounded border bg-muted/30 p-2">
       <div className="space-y-1">
@@ -873,7 +876,15 @@ function TextElementPanel({
           />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols-4 gap-1">
+        <LayerButton
+          disabled={false}
+          pressed={isBold}
+          onClick={() => onTextPatch({ fontWeight: isBold ? 500 : 700 })}
+          label="Bold"
+        >
+          <Bold className="h-3.5 w-3.5" />
+        </LayerButton>
         <LayerButton
           disabled={false}
           onClick={() => onTextPatch({ align: "left" })}
@@ -904,23 +915,26 @@ function LayerButton({
   disabled,
   onClick,
   label,
+  pressed,
   children,
 }: {
   disabled: boolean;
   onClick: () => void;
   label: string;
+  pressed?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <Button
       type="button"
-      variant="outline"
+      variant={pressed ? "default" : "outline"}
       size="sm"
       className="h-7 px-0"
       disabled={disabled}
       onClick={onClick}
       title={label}
       aria-label={label}
+      aria-pressed={pressed}
     >
       {children}
     </Button>

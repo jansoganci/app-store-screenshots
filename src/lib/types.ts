@@ -82,6 +82,7 @@ export type Slide = {
   inverted?: boolean;         // dark background variant
   bgStyle?: BgStyle;          // background fill mode; defaults to theme or solid when bgColor set
   bgColor?: string;           // per-slide background color override (e.g. "#FF5722")
+  bgColorEnd?: string;        // gradient end stop when bgStyle is gradient
   labelStyle?: TextStyle;     // label typography overrides
   headlineStyle?: TextStyle;  // headline typography overrides
   // Per-element overrides; when present, replaces layout default placement.

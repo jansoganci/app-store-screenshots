@@ -19,10 +19,6 @@ function themeBackground(theme: Theme, inverted?: boolean): string {
   return `linear-gradient(160deg, ${base} 0%, ${shade(base, -6)} 100%)`;
 }
 
-function colorGradient(color: string, lighter = false): string {
-  return `linear-gradient(160deg, ${color} 0%, ${shade(color, lighter ? 8 : -10)} 100%)`;
-}
-
 export function effectiveBgStyle(slide: Slide): BgStyle {
   if (slide.bgStyle) return slide.bgStyle;
   return slide.bgColor ? "solid" : "theme";
@@ -52,8 +48,9 @@ export function resolveSlideBackground(
     };
   }
 
+  const end = slide.bgColorEnd ?? shade(color, inverted ? 8 : -10);
   return {
-    background: colorGradient(color, inverted),
+    background: `linear-gradient(160deg, ${color} 0%, ${end} 100%)`,
     blobColor: color,
     useThemeBlobs: false,
   };
